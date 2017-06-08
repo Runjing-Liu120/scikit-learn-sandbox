@@ -217,7 +217,8 @@ def consolidate_bm_RF(features, responses, specs, seed = None):
     err_1param = 0
     for k in specs.keys():
         if np.max(np.shape([specs[k]])) > 1:
-            print(k)
+            print('looping through: ', k)
+            print('values: ', specs[k])
             loop_spec = k
             err_1param += 1
 
@@ -231,12 +232,9 @@ def consolidate_bm_RF(features, responses, specs, seed = None):
 
     n_loops = np.max(np.shape([specs[loop_spec]]))
 
-    print(specs[loop_spec])
-
     for k in specs.keys():
         if k != loop_spec:
             specs[k] = list([specs[k]]) * n_loops
-    print(specs)
 
     rf_bm = {}
 
@@ -277,7 +275,8 @@ def consolidate_bm_iRF(features, responses, specs, seed = None):
     err_1param = 0
     for k in specs.keys():
         if np.max(np.shape([specs[k]])) > 1:
-            print(k)
+            print('looping through: ', k)
+            print('values: ', specs[k])
             loop_spec = k
             err_1param += 1
 
@@ -291,12 +290,9 @@ def consolidate_bm_iRF(features, responses, specs, seed = None):
 
     n_loops = np.max(np.shape([specs[loop_spec]]))
 
-    print(specs[loop_spec])
-
     for k in specs.keys():
         if k != loop_spec:
             specs[k] = list([specs[k]]) * n_loops
-    print(specs)
 
     iRF_bm = {}
 
